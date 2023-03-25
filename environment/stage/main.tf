@@ -15,3 +15,13 @@ module "subnets" {
   vpc_id   = module.vpc.vpc_id
   
 }
+
+module "security_groups" {
+  source   = "../../modules/security_groups"
+  ssh_port = var.ssh_port
+  sonarqube_port = var.sonarqube_port
+  jenkins_port = var.jenkins_port
+  all_ip             = var.all_ip
+  vpc_id   = module.vpc.vpc_id
+ 
+}
